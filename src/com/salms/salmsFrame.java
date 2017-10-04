@@ -25,18 +25,13 @@ public class salmsFrame {
 		backLabel = new JLabel();
 		backLabel.setVerticalAlignment(SwingConstants.TOP);
 		backLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		//updateBackImage();
+		updateBackImage();
 		desktopPane = new JDesktopPane();
 		desktopPane.add(backLabel, new Integer(Integer.MIN_VALUE));
 		frame.getContentPane().add(desktopPane);
 		//JTabbedPane navigationPanel = createNavigationPanel();
 		//frame.getContentPane().add(navigationPanel, BorderLayout.NORTH);
-
-		
 		frame.setVisible(true);
-		
-
-		
 	}
 	
 	private JTabbedPane createNavigationPanel() {
@@ -45,7 +40,14 @@ public class salmsFrame {
 	}
 
 	private void updateBackImage() {
-		// TODO Auto-generated method stub
+		if(backLabel != null) {
+			int backw = salmsFrame.this.frame.getWidth();
+			int backh = salmsFrame.this.frame.getHeight();
+			backLabel.setSize(backw,backh);
+			backLabel.setText("<html><body><image width = '"+ backw
+					+ "'height ='"+ (backw-110)+"'src=" + salmsFrame.this.getClass().getResource("welcome.jpg")
+					+"'></image></body></html>");
+		}
 		
 	}
 
