@@ -64,14 +64,14 @@ public class salmsFrame {
 		//tabbedPane.setBorder(new BevelBorder(BevelBorder.RAISED));
 		
 	
-		JPanel baseManagePanel = new JPanel(); // 基础信息管理面板
+		JPanel baseManagePanel = new JPanel(); // 鍩虹淇℃伅绠＄悊闈㈡澘
 		baseManagePanel.setBackground(new Color(215, 223, 194));
 		baseManagePanel.setLayout(new BoxLayout(baseManagePanel,
 				BoxLayout.X_AXIS));
-//		baseManagePanel.add(createFrameButton("客户信息管理", "KeHuGuanLi"));
-//		baseManagePanel.add(createFrameButton("商品信息管理", "ShangPinGuanLi"));
-//		baseManagePanel.add(createFrameButton("供应商信息管理", "GysGuanLi"));
-		tabbedPane.addTab("   基础信息管理   ", null, baseManagePanel, "基础信息管理");
+//		baseManagePanel.add(createFrameButton("瀹㈡埛淇℃伅绠＄悊", "KeHuGuanLi"));
+//		baseManagePanel.add(createFrameButton("鍟嗗搧淇℃伅绠＄悊", "ShangPinGuanLi"));
+//		baseManagePanel.add(createFrameButton("渚涘簲鍟嗕俊鎭鐞�", "GysGuanLi"));
+		tabbedPane.addTab("    ukraine  ", null, baseManagePanel, "鍩虹淇℃伅绠＄悊");
 		
 		return tabbedPane;
 	}
