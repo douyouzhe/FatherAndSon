@@ -154,13 +154,13 @@ public class salmsFrame {
 			putValue(Action.SMALL_ICON,icon);
 			
 		}
-		Public void actionPerformed(final ActionEvent e)//wtf
+		public void actionPerformed(final ActionEvent e)//wtf
 		{
-			JInternalFrame jf=getIFrame(frameName);
+			JInternalFrame jf=getIFrame(FrameName);
 			jf.addInternalFrameListener(new InternalFrameAdapter()
 			{
 				public void internalFrameClosed(InternalFrameEvent e) {
-					ifs.remove(frameName);
+					ifs.remove(FrameName);
 				}
 			});
 			if(jf.getDesktopPane()==null) 
