@@ -7,7 +7,10 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
 import model.salmsSupplier;
+import model.salmsItem;
 
 
 public class Dao {
@@ -29,6 +32,18 @@ public class Dao {
 					ee.printStackTrace();
 				}
 			}
+	private Dao() {
+	}
+	// 读取所有客户信息
+//	public static List getKhInfos() {
+//		List list = findForList("select id,khname from tb_khinfo");
+//		return list;
+//	}
+//	// 读取所有供应商信息
+//	public static List getGysInfos() {
+//		List list = findForList("select id,name from tb_gysinfo");
+//		return list;
+//	}
 		
 	public static boolean addSupplierInfo(salmsSupplier supplierInfo) {
 		
@@ -41,13 +56,13 @@ public class Dao {
 				+ supplierInfo.geteMail() + "','" + supplierInfo.getBankBranch() + "')");
 		
 	}
-	public static int updateGys(salmsSupplier gysInfo) {
-		return update("update tb_gysinfo set jc='" + gysInfo.getNickName()
-				+ "',address='" + gysInfo.getAddress() + "',bianma='"
-				+ gysInfo.getZipCode() + "',tel='" + gysInfo.getTel()
-				+ "',fax='" + gysInfo.getFax() + "',lian='" + gysInfo.getContactPpl()
-				+ "',ltel='" + gysInfo.getContactTel() + "',mail='"
-				+ gysInfo.geteMail() + "',yh='" + gysInfo.getBankBranch()
-				+ "' where id='" + gysInfo.getId() + "'");
+	public static int updateGys(salmsSupplier supplierInfo) {
+		return update("update tb_gysinfo set jc='" + supplierInfo.getNickName()
+				+ "',address='" + supplierInfo.getAddress() + "',bianma='"
+				+ supplierInfo.getZipCode() + "',tel='" + supplierInfo.getTel()
+				+ "',fax='" + supplierInfo.getFax() + "',lian='" + supplierInfo.getContactPpl()
+				+ "',ltel='" + supplierInfo.getContactTel() + "',mail='"
+				+ supplierInfo.geteMail() + "',yh='" + supplierInfo.getBankBranch()
+				+ "' where id='" + supplierInfo.getId() + "'");
 	}
 }

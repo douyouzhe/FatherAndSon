@@ -1,6 +1,6 @@
 package model;
 
-public class salmsSupplier {
+public class salmsSupplier implements java.io.Serializable{
     private String id;
     private String name;
     private String nickName;
