@@ -11,7 +11,9 @@ import java.sql.Statement;
 import java.util.List;
 
 import model.salmsSupplier;
+import model.salmsCustomer;
 import model.salmsItem;
+import model.salmsStock;
 
 
 public class Dao {
@@ -85,6 +87,56 @@ public class Dao {
 			System.out.println("Table creation complete!");
 		}
 	}
+	public static void creatCustomerTable() throws Exception{
+		try {
+			Connection conn = getConnection();
+			PreparedStatement create = conn.prepareStatement(
+					"CREATE TABLE IF NOT EXISTS "
+					+ "tbCustomer"
+					+ "(id int AUTO_INCREMENT primary key NOT NULL,"
+					+ "customerName varchar(255),"
+					+ "customerNickName varchar(255),"
+					+ "address varchar(255),"
+					+ "zipCode varchar(255),"
+					+ "tel varchar(255),"
+					+ "fax varchar(255),"
+					+ "contactPpl varchar(255),"
+					+ "contactTel varchar(255),"
+					+ "mail varchar(255),"
+					+ "bankBrach varchar(255),"
+					+ "accountNumber varchar(255)"
+					+ ")");
+			create.executeUpdate();
+		}catch (Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Table creation complete!");
+		}
+	}
+	public static void creatStockTable() throws Exception{
+		try {
+			Connection conn = getConnection();
+			PreparedStatement create = conn.prepareStatement(
+					"CREATE TABLE IF NOT EXISTS "
+					+ "tbStock"
+					+ "(id int AUTO_INCREMENT primary key NOT NULL,"
+					+ "stockName varchar(255),"
+					+ "stockNickName varchar(255),"
+					+ "stockOrigin varchar(255),"
+					+ "stockSize varchar(255),"
+					+ "unit varchar(255),"
+					+ "unitPrice double(5,2),"
+					+ "stockAmount int(10)"
+					+ ")");
+			create.executeUpdate();
+		}catch (Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Table creation complete!");
+		}
+	}
 // add instance to tables	
 	public static void addSupplier(salmsSupplier supplierInfo) throws Exception{		
 		try {
@@ -116,7 +168,6 @@ public class Dao {
 		try {
 			Connection conn = getConnection();
 			PreparedStatement added = conn.prepareStatement("INSERT INTO tbItem "
-					//+ "(cols) "
 					+ "VALUES ('"+itemInfo.getId()+"','"
 					+itemInfo.getItemName()+"','"
 					+itemInfo.getItemNickName()+"','"
@@ -138,13 +189,68 @@ public class Dao {
 			System.out.println("Insertion complete!");
 		}
 	}	
-	
+	public static void addCustomer(salmsCustomer customerInfo) throws Exception{		
+		try {
+			Connection conn = getConnection();
+			PreparedStatement added = conn.prepareStatement("INSERT INTO tbCustomer "
+					+ "VALUES ('"+customerInfo.getId()+"','"
+					+customerInfo.getCustomerName()+"','"
+					+customerInfo.getCustomerNickName()+"','"
+					+customerInfo.getAddress()+"','"
+					+customerInfo.getZipCode()+"','"
+					+customerInfo.getTel()+"','"
+					+customerInfo.getFax()+"','"
+					+customerInfo.getContactPpl()+"','"
+					+customerInfo.getContactTel()+"','"
+					+customerInfo.getMail()+"','"
+					+customerInfo.getBankBranch()+"','"
+					+customerInfo.getAccountNumber()+"'"
+					+ ")");
+			added.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Insertion complete!");
+		}
+	}
+	public static void addStock(salmsStock stockInfo) throws Exception{		
+		try {
+			Connection conn = getConnection();
+			String query = " insert into tbStock (id, "
+					+ "stockName, "
+					+ "stockNickName, "
+					+ "stockOrigin, "
+					+ "stockSize, "
+					+ "unit, "
+					+ "unitPrice, "
+					+ "stockAmount)"
+				    + " values (?, ?, ?, ?, ?,?,?,?)";
+			PreparedStatement preparedStmt = conn.prepareStatement(query);
+			preparedStmt.setInt(1,stockInfo.getId());
+			preparedStmt.setString(2, stockInfo.getStockName());
+			preparedStmt.setString(3, stockInfo.getStockNickName());
+			preparedStmt.setString(4, stockInfo.getStockOrigin());
+			preparedStmt.setString(5, stockInfo.getStockSize());
+			preparedStmt.setString(6, stockInfo.getUnit());
+			preparedStmt.setDouble(7, stockInfo.getUnitPrice());
+			preparedStmt.setInt(8, stockInfo.getStockAmount());
+			preparedStmt.executeUpdate();
+			conn.close();
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Insertion complete!");
+		}
+	}
 	
 	public static void main(String[] args) throws Exception {
 //		getConnection();
 //		creatSupplierTable();
 //		creatItemTable();
-
 	}
 	
 	
