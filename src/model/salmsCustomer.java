@@ -2,7 +2,7 @@ package model;
 
 public class salmsCustomer implements java.io.Serializable{
 	
-    private String id;
+    private int id;
     private String customerName;
     private String customerNickName;
     private String address;
@@ -20,12 +20,12 @@ public class salmsCustomer implements java.io.Serializable{
     }
 
 	/** minimal constructor */
-    public salmsCustomer(String id) {
+    public salmsCustomer(int id) {
         this.id = id;
     }
     
     /** full constructor */
-    public salmsCustomer(String id, String customerName, String customerNickName, String address, String zipCode, String tel, String fax, String contactPpl, String contactTel, String mail, String bankBranch, String accountNumber) {
+    public salmsCustomer(int id, String customerName, String customerNickName, String address, String zipCode, String tel, String fax, String contactPpl, String contactTel, String mail, String bankBranch, String accountNumber) {
         this.id = id;
         this.customerName = customerName;
         this.customerNickName = customerNickName;
@@ -41,10 +41,10 @@ public class salmsCustomer implements java.io.Serializable{
     }
     
     
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getCustomerName() {

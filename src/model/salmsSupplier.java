@@ -1,7 +1,7 @@
 package model;
 
 public class salmsSupplier implements java.io.Serializable{
-    private String id;
+    private int id;
     private String name;
     private String nickName;
     private String address;
@@ -17,11 +17,11 @@ public class salmsSupplier implements java.io.Serializable{
     	
     }
     
-    public salmsSupplier(String id) {
+    public salmsSupplier(int id) {
         this.id = id;
     }
     
-    public salmsSupplier(String id, String name, String nickName, String address, String zipCode, String tel, String fax, String contactPpl, String contactTel, String bankBranch, String eMail) {
+    public salmsSupplier(int id, String name, String nickName, String address, String zipCode, String tel, String fax, String contactPpl, String contactTel, String bankBranch, String eMail) {
         this.id = id;
         this.name = name;
         this.nickName = nickName;
@@ -36,10 +36,10 @@ public class salmsSupplier implements java.io.Serializable{
     }
     
     
-    public String getId() {
+    public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
