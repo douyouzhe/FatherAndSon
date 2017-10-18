@@ -393,14 +393,14 @@ public class Dao {
 //get info for one instance
 	public static salmsCustomer getKhInfo(salmsItem item) {
 		String where = "khname='" + item.getItemName() + "'";
-		if (item.getId() != null)
+		if (item.getId() != 0)
 			where = "id='" + item.getId() + "'";
 		salmsCustomer info = new salmsCustomer();
 		ResultSet set = findFromResultSet("select * from tbCustomer where "
 				+ where);
 		try {
 			if (set.next()) {
-				info.setId(set.getString("id").trim());
+				info.setId(set.getInt(1));
 				info.setKhname(set.getString("khname").trim());
 				info.setJian(set.getString("jian").trim());
 				info.setAddress(set.getString("address").trim());
