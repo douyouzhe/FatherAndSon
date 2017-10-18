@@ -15,6 +15,8 @@ public class salmsCustomer implements java.io.Serializable{
     private String bankBranch;
     private String accountNumber;
     
+
+    
     
     public salmsCustomer() {
     }

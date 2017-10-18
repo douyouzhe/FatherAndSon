@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FatherAndSon.iml" filepath="$PROJECT_DIR$/.idea/FatherAndSon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SalesAndLogisticManagementSystem.iml" filepath="$PROJECT_DIR$/SalesAndLogisticManagementSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bin/src.iml" filepath="$PROJECT_DIR$/bin/src.iml" />
     </modules>
   </component>
 </project>
