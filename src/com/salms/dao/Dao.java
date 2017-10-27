@@ -391,33 +391,33 @@ public class Dao {
 	}
 	
 //get info for one instance
-	public static salmsCustomer getKhInfo(salmsItem item) {
-		String where = "khname='" + item.getItemName() + "'";
-		if (item.getId() != 0)
-			where = "id='" + item.getId() + "'";
-		salmsCustomer info = new salmsCustomer();
-		ResultSet set = findFromResultSet("select * from tbCustomer where "
-				+ where);
-		try {
-			if (set.next()) {
-				info.setId(set.getInt(1));
-				info.setKhname(set.getString("khname").trim());
-				info.setJian(set.getString("jian").trim());
-				info.setAddress(set.getString("address").trim());
-				info.setBianma(set.getString("bianma").trim());
-				info.setFax(set.getString("fax").trim());
-				info.setHao(set.getString("hao").trim());
-				info.setLian(set.getString("lian").trim());
-				info.setLtel(set.getString("ltel").trim());
-				info.setMail(set.getString("mail").trim());
-				info.setTel(set.getString("tel").trim());
-				info.setXinhang(set.getString("xinhang").trim());
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return info;
-	}	
+//	public static salmsCustomer getKhInfo(salmsItem item) {
+//		String where = "khname='" + item.getItemName() + "'";
+//		if (item.getId() != 0)
+//			where = "id='" + item.getId() + "'";
+//		salmsCustomer info = new salmsCustomer();
+//		ResultSet set = findFromResultSet("select * from tbCustomer where "
+//				+ where);
+//		try {
+//			if (set.next()) {
+//				info.setId(set.getInt(1));
+//				info.setKhname(set.getString("khname").trim());
+//				info.setJian(set.getString("jian").trim());
+//				info.setAddress(set.getString("address").trim());
+//				info.setBianma(set.getString("bianma").trim());
+//				info.setFax(set.getString("fax").trim());
+//				info.setHao(set.getString("hao").trim());
+//				info.setLian(set.getString("lian").trim());
+//				info.setLtel(set.getString("ltel").trim());
+//				info.setMail(set.getString("mail").trim());
+//				info.setTel(set.getString("tel").trim());
+//				info.setXinhang(set.getString("xinhang").trim());
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return info;
+//	}
 	
 //
 	public static List findListFromDB(String sql) throws Exception {

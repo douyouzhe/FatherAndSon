@@ -17,7 +17,6 @@ public class salmsCustomer implements java.io.Serializable{
     
 
     
-    
     public salmsCustomer() {
     }
 
